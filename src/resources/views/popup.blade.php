@@ -1,4 +1,4 @@
-@section('scripts')
+@push('scripts')
 <script type="text/javascript">
 	function elfinderInit(params) {
 		var params = $.extend({
@@ -52,6 +52,6 @@
 		}
 	});
 </script>
-@stop
+@endpush
 
 <div id="elfinder"></div>

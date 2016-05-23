@@ -1,4 +1,4 @@
-@section('scripts')
+@push('scripts')
 <script>
 $(function() {
 	var elfinder = $('#elfinder').elfinder({
@@ -41,6 +41,6 @@ $(function() {
 	});
 });
 </script>
-@stop
+@endpush
 
 <div id="elfinder"></div>
