@@ -7,15 +7,6 @@ use KodiCMS\Users\Model\Permission;
 
 class ModuleServiceProvider extends ServiceProvider
 {
-    public function boot()
-    {
-        Permission::register('filemanager', 'filemanager', [
-            'view',
-        ]);
-
-        $this->registerNavigation();
-    }
-
     /**
      * Register the service provider.
      *
@@ -23,9 +14,12 @@ class ModuleServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        Permission::register('filemanager', 'filemanager', [
+            'view',
+        ]);
     }
 
-    protected function registerNavigation()
+    public function contextBackend()
     {
         \Navigation::setFromArray([
             [
