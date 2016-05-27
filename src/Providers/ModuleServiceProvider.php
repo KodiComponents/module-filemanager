@@ -19,6 +19,13 @@ class ModuleServiceProvider extends ServiceProvider
         ]);
     }
 
+    public function boot()
+    {
+        $this->publishes([
+            __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'public'.DIRECTORY_SEPARATOR.'cms' => public_path('cms'),
+        ], 'kodicms');
+    }
+
     public function contextBackend()
     {
         \Navigation::setFromArray([
