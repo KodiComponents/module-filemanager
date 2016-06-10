@@ -16,6 +16,9 @@ class FilemanagerController extends BackendController
     public function popup()
     {
         Meta::loadPackage(['elfinder', 'jquery-ui', 'ace']);
+
+        $this->requestType = 'iframe';
+
         $this->setContent('popup');
     }
 }
